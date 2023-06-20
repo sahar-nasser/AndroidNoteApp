@@ -6,7 +6,7 @@ import com.plcoding.cleanarchitecturenoteapp.ui.theme.*
 
 @Entity
 data class Note(
-    val title:String,
+    var title:String,
     val content:String,
     val timestamp:Long,
     val color: Int,
@@ -16,3 +16,5 @@ data class Note(
         val noteColors = listOf(RedOrange, RedPink, LightGreen, LightBlue, Violet)
     }
 }
+
+class InvalidNoteException(message:String) : Exception(message)
